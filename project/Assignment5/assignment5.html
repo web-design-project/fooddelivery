@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BOOTSTRAP</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <style>
+    body{
+ 
+      background-color:LightCyan;
+      font-family: Comic Sans MS;
+    }
+     #img1{
+                width: 304px;
+                 height: 236px; 
+                transition: width 0.1s, height 0.1s;
+}
+
+#img1:hover {
+  width: 307px;
+  height: 240px;
+}
+  body {
+      position: relative;
+  }
+  #carousel-example{
+   animation-fill-mode: both;
+  }
+  footer{
+	width:100%;
+	bottom:0;
+	background-color:#222;
+	padding:20px 0px;
+	position:relative;
+}
+#zero{
+  color:snow;
+}
+.well{
+  font-size: 20px;
+  background-color: azure;
+}
+.carousel {
+    height: 400px;
+    overflow: hidden;
+}
+.carousel .item {
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+.carousel .active.left, .carousel .active.right {
+    left:0;
+    opacity:0;
+    z-index:2;
+}
+.carousel .next, .carousel .prev {
+    left:0;
+    opacity:1;
+    z-index:1;
+}
+.btn1 {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 15px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.btn1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn1 span:after {
+  content: '\261C';
+  font-size: 20px;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -70px;
+  transition: 0.5s;
+}
+.btn1:hover span {
+  padding-left: 25px;
+}
+.btn1:hover span::after {
+  opacity: 1;
+  right: 0;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #050505;
+    opacity: .3;
+}
+.form-control{
+position:absolute;
+  top: 50%;
+  left: 49%;
+  width: 420px;
+  height: 45px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 18px;
+  padding: 12px 45px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: none;
+  
+  cursor: pointer;
+  
+}
+.input-group-addon{
+  position: absolute;
+  top: 50%;
+  left: 36.5%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 2.375rem;
+    line-height: 2.375rem;
+    color: rgb(7, 7, 7);
+}
+.inner-addon .glyphicon {
+  position: absolute;
+  top: 50%;
+  left: 35.5%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 2.375rem;
+    line-height: 2.375rem;
+    color: rgb(7, 7, 7);
+}
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <!-- <a class="navbar-brand" href="#"></a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#QuickSearch">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section2">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section3">Popular Around You</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#section5">Contact Us</a>
+        </li>
+      <!-- <li class="nav-item">
+      <a class="nav-link dropdown-toggle" href="#section4" id="navbardrop" data-toggle="dropdown">Locations</a> -->
+      <li class="nav-item">
+          <a class="nav-link dropdown-toggle" href="#section4">Locations</a>
+         
+      <div class="dropdown-menu">
+        <!-- <a class="dropdown-item" href="#section41">Link 1</a>
+        <a class="dropdown-item" href="#section42">Link 2</a> -->
+      </div>
+    </li>
+    </ul>
+  </div>
+      <button type="button" class="btn btn-outline-danger navbar-btn navbar-right mr-3">Login</button>
+    <button type="button" class="btn btn-outline-danger navbar-btn navbar-right">Sign Up</button>
+</nav>
+<!--Carousel with controls and indicators-->
+<div id="carousel-example" class="carousel  fade-carousel slide" data-ride="carousel">
+  <!--Indicators-->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example" data-slide-to="1"></li>
+    <li data-target="#carousel-example" data-slide-to="2"></li>
+  </ol>
+  <!--/.Indicators-->
+  <!--Slides-->
+  <center>
+  <div class="carousel-inner" role="listbox">
+    <!--First slide-->
+    <div class="carousel-item active">
+     <div class="slide-1">
+        <div class="overlay"></div>
+       </div>
+      <img class="d-block w-100 " src="3.jpg" alt="First slide">
+    </div>
+    <!--/First slide-->
+    <!--Second slide-->
+    <div class="carousel-item ">
+     <div class="slide-2">
+        <div class="overlay"></div>
+       </div>
+      <img class="d-block w-100 " src="2.png" alt="Second slide">
+    </div>
+    <!--/Second slide-->
+    <!--Third slide-->
+    <div class="carousel-item">
+     <div class="slide-3">
+        <div class="overlay"></div>
+       </div>
+      <img class="d-block w-100 " src="1.png" alt="Third slide">
+    </div>
+    <!--/Third slide-->
+  </div>
+</center>
+  <!--/.Slides-->
+  <!--Controls-->
+  <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <!--/.Controls-->
+  
+         <div class="inner-addon " >
+      <i class="glyphicon glyphicon-search"></i>
+      <input type="text" class="form-control" id="focusedInput" placeholder="Search here for restaurants and cuisines.."/>
+  
+    </div>
+    
+  
+      <button class="btn1 btn-danger mr-6"><span>Search</span></button>
+</div>
+
+
+<!--/.Carousel Wrapper-->
+<!-- .xs- < 768px -sm ->=768px -md - >=992px  >=1200 px-->
+<div id="QuickSearch" class="container-fluid" style="padding-top:70px;padding-bottom:70px;margin: 10px; background-color: beige">
+  <h2>Quick Search</h2>
+  <figure style="display: inline-block">
+  <a href="https://www.zomato.com/boston/breakfast"><img class="card-img-top" src="fried-egg.png" alt="Card image" style="height: 250px; width: 250px; padding: 50px;"></a>
+  <figcaption style="text-align: center">Breakfast</figcaption>
+
+</figure>
+<figure style="display: inline-block">
+  <a href="https://www.zomato.com/boston/lunch"><img class="card-img-top" src="chicken.png" alt="Card image" style="height: 250px; width: 250px; padding: 50px;"></a>
+  <figcaption style="text-align: center">Lunch/Dinner</figcaption>
+
+</figure>
+<figure style="display: inline-block">
+ <a href="https://www.zomato.com/boston/take-away"><img class="card-img-top" src="take-away (2).png" alt="Card image" style="height: 250px; width: 250px; padding: 50px;"></a>
+  <figcaption style="text-align: center">Take Away</figcaption>
+
+</figure>
+<figure style="display: inline-block">
+  <a href="https://www.zomato.com/boston/delivery"><img class="card-img-top" src="delivery.png" alt="Card image" style="height: 250px; width: 250px; padding: 50px;"></a>
+   <figcaption style="text-align: center">Delivery</figcaption>
+ 
+ </figure>
+</div>
+<div id="section3" class="container-fluid" style="padding-top:50px;padding-bottom:50px">
+  <h1>Popular Restaurants Around You</h1>
+
+  <div class="card-deck">
+    <div class="row" style="padding-bottom: 20px;">
+
+      <div class="col-sm-3">
+          <div class="card">
+            <img class="card-img-top" src="Images/Card_11.jpg" alt="Card image" style="width:100%">
+            <div class="card-body">
+            <h4 class="card-title">The Cheese Cake Factory</h4>
+            <p class="card-text">With more than 250 menu items and more than 50 signature cheesecakes and desserts, there is truly “Something for everyone” </p>
+            <a href="#" class="btn btn-primary">View Menu</a>
+          </div>
+          </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card">
+          <img class="card-img-top" src="Images/Card_2.jpg" alt="Card image" style="width:100%">
+          <div class="card-body">
+          <h4 class="card-title">SRV</h4>
+          <p class="card-text">SRV, Serene Republic of Venice, is Boston's first Venetian-style Bacaro and wine bar. Specializing in cicchetti(Small bites), pasta made from house-milled flour. Visit Now!</p>
+          <a href="#" class="btn btn-primary">View Menu</a>
+        </div>
+        </div>
+    </div>
+  
+      <div class="col-sm-3">
+          <div class="card">
+            <img class="card-img-top" src="Images/Card_3.jpg" alt="Card image" style="width:100%">
+            <div class="card-body">
+            <h4 class="card-title">Hojoko</h4>
+            <p class="card-text">Hojoko Where East meets the West. From Sushi and Bowls to Sake and Midnight Munchies, we've got something exciting for everyone!. There is Something for everyone.</p>
+            <a href="#" class="btn btn-primary">View Menu</a>
+          </div>
+          </div>
+      </div>
+	          
+
+  </div>
+</div>
+
+
+<div id="section2" class="container-fluid" style="padding-top:20px;padding-bottom:70px">
+<div class="well"><center><b>.....ABOUT US.....<b></b></center>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tristique mauris erat, in elementum erat ullamcorper et. Aenean vitae auctor quam, eget efficitur sem. Cras rhoncus ante dui, eu rutrum ante blandit id. Vivamus consectetur at eros eu consectetur. Praesent interdum nunc eu elit euismod, eget laoreet quam ultrices. Aliquam blandit nisi sit amet dolor vulputate, non dictum nisi aliquet. In hac habitasse platea dictumst. Donec id convallis nunc. Nam tincidunt mollis orci, ac egestas erat ultricies id. Donec vel ligula at orci vestibulum luctus. Quisque lobortis efficitur augue, ac vulputate risus rhoncus at. Curabitur posuere neque sit amet purus mollis, vel accumsan erat ullamcorper.</p>
+
+
+
+<div class="row"> 
+      <div  class="col-sm-4"><img src="Images/Boston.jpg" id="img1" class="img-rounded "/> <br/></div>
+        <div class="col-sm-4"><img src="Images/Ny.jpg" id="img1" class="img-rounded"/><br/></div>
+        <div class="col-sm-4"><img src="Images/wdc.jpg" id="img1" class="img-rounded"/><br/></div>  
+</div>
+<p>Aliquam non ipsum vel lacus rhoncus sagittis eget id massa. Integer sagittis arcu sed libero porta, et luctus nulla fermentum. Aenean varius, felis sed auctor vulputate, enim nisl porttitor felis, sit amet rutrum augue ligula in tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas ut orci faucibus, bibendum est a, maximus sapien. Integer mattis sed risus et vestibulum. Nam consequat, justo eget fermentum molestie, quam dolor maximus velit, et ultrices turpis tellus nec mauris.</p>
+</div>
+  </div>
+
+<div id="" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+  <h1><center>..........OUR OFFICE LOCATIONS..........</center></h1>
+  </div>
+<!-- <div id="" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 4 Submenu 2</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div> -->
+<!-- 
+Sanskruti's changes -->
+<div id="section4" class="container-fluid">
+    <div class="row"> 
+          <div  class="col-sm-4"><img src="Images/Boston.jpg" id="img1" class="img-circle "/> <br/></div>
+            <div class="col-sm-4"><img src="Images/Ny.jpg" id="img1" class="img-circle "/><br/></div>
+            <div class="col-sm-4"><img src="Images/wdc.jpg" id="img1" class="img-circle"/><br/></div>  
+    </div>
+</div>
+<br><br>
+<div class ="container">
+        <div class="row"> 
+              <div  class="col-sm-4"><center><b>BOSTON</b></center><br/></div>
+                <div class="col-sm-4"><center><b>NEW YORK</b></center><br/><br/></div>
+                <div class="col-sm-4"><center><b>WASHINGTON DC</b></center><br/></div>  
+        </div>
+    </div>
+    <div id="section5" class="container-fluid contact-form ">
+        <h1>Contact Us</h1>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <address>Boston</address>
+            <p>Phone:- 8572347384 </p><br>
+          </div>
+          <div class="col-md-6">
+              <address>Newyork</address>
+              <p>Phone:- 1234567890 </p><br>
+            </div>
+            <div class="col-md-6">
+                <address>Washington</address>
+                <p>Phone:- 9485739405 </p><br>
+              </div>
+              <div class="col-md-6">
+                  <address>California</address>
+                  <p>Phone:- 4738475069 </p><br>
+                </div>
+            
+          </div>
+        
+         
+           
+           
+           
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+              <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+
+            <div class="col-md-6"><br>
+                <div class="form-group">
+                  <label>Message</label>
+                  <textarea class="form-control" rows="2"></textarea>
+                </div><br>
+              </div>
+
+             
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block">Send</button>
+             
+              </div>
+                
+               
+          </div>
+       
+     
+      <style>
+        body{
+          
+         background-size: cover;
+        }
+        hr{
+          background: white;
+        }
+        .contact-form{
+          background: #929C9C;
+          color: white;
+         /* padding-top:70px;
+          padding-bottom:70px;*/
+        }
+      </style>
+   
+<div class="" style="margin-bottom:0">
+    <footer>
+        <center><p id="zero">Copyright &copy, XYZ food company 2018,All Rights Reserved</p></Center>
+        <center><p class="one"><a href="Terms&Condition.html" >Terms & Condition</a></p></Center>
+        </footer>
+</div>
+</body>
+</html>
